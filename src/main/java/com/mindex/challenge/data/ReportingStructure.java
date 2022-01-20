@@ -48,11 +48,15 @@ public class ReportingStructure {
         // Since ordering is not important and we only want to store unique reports
         // HashSet was used as the set implementation as it has the highest performance
         Set<String> uniqueReportsId = new HashSet<String>();
-
-        for (Employee reportLevelOne : employee.getDirectReports()) {
-            uniqueReportsId.add(reportLevelOne.getEmployeeId());
-            for (Employee reportLevelTwo : reportLevelOne.getDirectReports()) {
-                uniqueReportsId.add(reportLevelTwo.getEmployeeId());
+        
+        if(employee.getDirectReports() != null) {
+            for (Employee reportLevelOne : employee.getDirectReports()) {
+                uniqueReportsId.add(reportLevelOne.getEmployeeId());
+                if(reportLevelOne.getDirectReports() != null) {
+                    for (Employee reportLevelTwo : reportLevelOne.getDirectReports()) {
+                        uniqueReportsId.add(reportLevelTwo.getEmployeeId());
+                    }
+                }
             }
         }
         return uniqueReportsId.size();

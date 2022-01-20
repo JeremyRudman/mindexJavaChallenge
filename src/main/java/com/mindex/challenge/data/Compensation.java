@@ -1,7 +1,7 @@
 package com.mindex.challenge.data;
 
 import java.math.BigDecimal;
-import java.sql.Date;
+import java.time.LocalDate;
 
 public class Compensation {
     private String compensationId;
@@ -15,7 +15,7 @@ public class Compensation {
     // BigDecimal is used here to avoid precision problems with floats 
     // (E.G. 0.03 - 0.02 != 0.1 with type float but does equal 0.01 with BigDecimal)
     private BigDecimal salary;
-    private Date effectiveDate; 
+    private LocalDate effectiveDate; 
 
     public Compensation() {
     }
@@ -51,11 +51,11 @@ public class Compensation {
         this.salary = salary;
     }
 
-    public Date getEffectiveDate() {
+    public LocalDate getEffectiveDate() {
         return this.effectiveDate;
     }
 
-    public void setEffectiveDate(Date effectiveDate) {
+    public void setEffectiveDate(LocalDate effectiveDate) {
         this.effectiveDate = effectiveDate;
     }
 
