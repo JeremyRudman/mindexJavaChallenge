@@ -2,7 +2,6 @@ package com.mindex.challenge.service.impl;
 
 import com.mindex.challenge.data.ReportingStructure;
 import com.mindex.challenge.data.Employee;
-import com.mindex.challenge.service.ReportingStructureService;
 import com.mindex.challenge.service.EmployeeService;
 
 import org.junit.Before;

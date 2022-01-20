@@ -26,7 +26,11 @@ public class ReportingStructure {
         this.numberOfReports = calculateNumberOfReports();
     }
 
-    
+    /**
+     * Calculated the number of reports a employee has on each call
+     * 
+     * @return the sum of direct reports for the employee and all their distinct reports.
+     */
     public int getNumberOfReports() {
         this.numberOfReports = calculateNumberOfReports();
         return this.numberOfReports;
@@ -37,7 +41,7 @@ public class ReportingStructure {
      * of those direct reports. The total number of unique reports in that set of reports
      * is counted and then return. If there is no employee set then 0 is returned.
      * 
-     * @return the sum of direct reports for the employee and all their distinct reports,
+     * @return the sum of direct reports for the employee and all their distinct reports.
      */
     private int calculateNumberOfReports() {
         // null check if employee is not set or was later set to null

@@ -32,6 +32,11 @@ public class Compensation {
         this.compensationId = compensationId;
     }
 
+    /**
+     * sets the employee and employeeId field at the same time
+     * 
+     * @param employee the employee that being set
+     */
     public void setEmployee(Employee employee) {
         this.employee = employee;
         if(employee != null) {
