@@ -4,6 +4,9 @@ import java.math.BigDecimal;
 import java.sql.Date;
 
 public class Compensation {
+    private String compensationId;
+    // stores employee Id separately for easy lookup from database
+    private String employeeId;
     private Employee employee;
 
     // It may be ideal to create another field with the currency type
@@ -21,8 +24,23 @@ public class Compensation {
         return this.employee;
     }
 
+    public String getCompensationId() {
+        return this.compensationId;
+    }
+
+    public void setCompensationId(String compensationId) {
+        this.compensationId = compensationId;
+    }
+
     public void setEmployee(Employee employee) {
         this.employee = employee;
+        if(employee != null) {
+            this.employeeId = this.employee.getEmployeeId();
+        }
+    }
+
+    public String getEmployeeId(){
+        return this.employeeId;
     }
 
     public BigDecimal getSalary() {

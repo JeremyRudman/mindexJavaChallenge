@@ -18,7 +18,7 @@ public class ReportingStructureServiceImpl implements ReportingStructureService 
 
     @Override
     public ReportingStructure read(String employeeId) {
-        LOG.debug("Reading Reporting Structure with employee id [{}]", employeeId);
+        LOG.debug("Getting reporting structure with employee id [{}]", employeeId);
 
         Employee employee = employeeRepository.findByEmployeeId(employeeId);
 
